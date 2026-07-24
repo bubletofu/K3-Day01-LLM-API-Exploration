@@ -85,11 +85,11 @@ Gọi `chat_with_system_prompt` hai lần với cùng câu hỏi
 ảnh hưởng đến hành vi model ra sao?** (3–4 câu)
 User prompt cho cả 2 lần: “Giải thích blockchain là gì?”
 
-Model/API: NVIDIA NIM `meta/llama-3.1-8b-instruct` qua `OPENAI_BASE_URL=https://integrate.api.nvidia.com/v1`. Tôi dùng mini model cho phần ghi nhận này vì worker của model 70B báo `ResourceExhausted` ở lần gọi persona thứ hai.
+Model/API: NVIDIA NIM `meta/llama-3.1-8b-instruct` qua `OPENAI_BASE_URL=https://integrate.api.nvidia.com/v1`. Dùng mini model cho phần ghi nhận này vì worker của model 70B báo `ResourceExhausted` ở lần gọi persona thứ hai.
 
 System prompt 1: “Bạn là giáo viên tiểu học, giải thích thật đơn giản cho trẻ 8 tuổi.”
 
-Phản hồi API y nguyên:
+Phản hồi :
 
 ```text
 Chào các bạn nhỏ!
@@ -117,7 +117,7 @@ Blockchain giúp chúng ta có thể:
 
 System prompt 2: “Bạn là chuyên gia tài chính, trả lời chuyên sâu bằng thuật ngữ kỹ thuật.”
 
-Phản hồi API y nguyên:
+Phản hồi :
 
 ```text
 Blockchain là một công nghệ dữ liệu phân tán (Decentralized Data) được sử dụng để lưu trữ và truyền tải thông tin một cách an toàn, minh bạch và không thể thay đổi. Công nghệ này dựa trên ý tưởng về một sổ cái (Ledger) phân tán, trong đó dữ liệu được lưu trữ và xác minh bởi một mạng lưới các nút (Node) phân tán trên toàn cầu.
@@ -150,7 +150,7 @@ Trong quá trình học lập trình AI, tôi nhận thấy việc đặt câu h
 
 Lệnh/hàm đã gọi: `count_tokens(text, model="gpt-4o")`.
 
-Kết quả ghi nhận y nguyên từ lần đo: đoạn văn có 112 từ; `count_tokens` trả về 133 token; ước lượng `số từ / 0.75` là khoảng 149,3 token; chênh khoảng 10,9%.
+Kết quả ghi nhận  từ lần đo: đoạn văn có 112 từ; `count_tokens` trả về 133 token; ước lượng `số từ / 0.75` là khoảng 149,3 token; chênh khoảng 10,9%.
 
 Nhận xét: tiếng Việt có nhiều dấu, âm tiết tách bằng khoảng trắng và một số từ ghép gồm nhiều tiếng, nên tokenizer có thể chia nhỏ khác với cách ta đếm “từ”. Vì vậy đếm từ chỉ là ước lượng thô; khi tính chi phí thật nên dùng tokenizer.
 
